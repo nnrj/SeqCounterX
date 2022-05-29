@@ -5,7 +5,13 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeqCounterX", "SeqCounterX\SeqCounterX.csproj", "{5CA9DAAF-49AD-432F-BBC6-280C3F143704}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SeqCountXSetup", "SeqCountXSetup\SeqCountXSetup.vdproj", "{F6518A36-8683-4963-B042-0A476CF51F31}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SeqCounterXSetup", "SeqCountXSetup\SeqCountXSetup.vdproj", "{F6518A36-8683-4963-B042-0A476CF51F31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{BA4E90C1-C006-4057-9C55-973469278EF6}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
