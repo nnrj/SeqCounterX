@@ -292,7 +292,8 @@ namespace SeqCounterX
                 //调用创建压缩包的方法
                 // zipHelper.CreatZip(@".//results", exportFileDialog.FileName);
                 zipHelper.CreatZip(UtilX.ReplaceSeparatorChar(setting.seqCounter.outputOptions.resultPath), exportFileDialog.FileName);
-                ShowNotice("导出成功！文件位置：[" + exportFileDialog.FileName + "]。");
+                // ShowNotice("导出成功！文件位置：[" + exportFileDialog.FileName + "]。");
+                ShowNotice("导出成功！");
                 return;
             }
             else if (exportStatus == DialogResult.Cancel)
@@ -729,6 +730,12 @@ namespace SeqCounterX
                 e.Cancel = true;
             }
             SaveAllData();
+        }
+
+        private void monitorRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            monitorRichTextBox.SelectionStart = monitorRichTextBox.Text.Length;
+            monitorRichTextBox.ScrollToCaret();
         }
     }
 }

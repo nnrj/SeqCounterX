@@ -142,6 +142,7 @@
             this.monitorRichTextBox.Size = new System.Drawing.Size(565, 532);
             this.monitorRichTextBox.TabIndex = 6;
             this.monitorRichTextBox.Text = "";
+            this.monitorRichTextBox.TextChanged += new System.EventHandler(this.monitorRichTextBox_TextChanged);
             // 
             // exitedButton
             // 
@@ -410,8 +411,8 @@
             // 
             this.extractExtensionNameComboBox.FormattingEnabled = true;
             this.extractExtensionNameComboBox.Items.AddRange(new object[] {
-            "fasta",
-            "txt"});
+            ".fasta",
+            ".txt"});
             this.extractExtensionNameComboBox.Location = new System.Drawing.Point(86, 239);
             this.extractExtensionNameComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.extractExtensionNameComboBox.Name = "extractExtensionNameComboBox";
@@ -558,9 +559,9 @@
             // 
             this.resultExtensionNameComboBox.FormattingEnabled = true;
             this.resultExtensionNameComboBox.Items.AddRange(new object[] {
-            "log",
-            "txt",
-            "xlsx"});
+            ".log",
+            ".txt",
+            ".xlsx"});
             this.resultExtensionNameComboBox.Location = new System.Drawing.Point(86, 204);
             this.resultExtensionNameComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.resultExtensionNameComboBox.Name = "resultExtensionNameComboBox";
@@ -592,8 +593,8 @@
             // 
             this.seqExtensionNameComboBox.FormattingEnabled = true;
             this.seqExtensionNameComboBox.Items.AddRange(new object[] {
-            "txt",
-            "fasta"});
+            ".txt",
+            ".fasta"});
             this.seqExtensionNameComboBox.Location = new System.Drawing.Point(86, 168);
             this.seqExtensionNameComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.seqExtensionNameComboBox.Name = "seqExtensionNameComboBox";
