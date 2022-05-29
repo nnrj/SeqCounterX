@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9mXvXHu7DzRJqqTpZ1XzVcwyNJ/OmLkd7L+wMfFssvKZhKAoe19gqAj73kMyDmaNdKcxoZ70Drc2I4YSstkc+g==",
+  "success": true,
+  "projectFilePath": "E:\\WORKSPACE\\VSWorkspace\\SeqCounterX\\SeqCounterX\\SeqCounterX.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tianh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
