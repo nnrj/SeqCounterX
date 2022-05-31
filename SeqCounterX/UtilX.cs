@@ -202,5 +202,14 @@ namespace SeqCounterX
             }
             return true;
         }
+
+        public static string GetExtensionNameX(string fileName)
+        {
+            if (UtilX.StrIsEmpty(fileName))
+            {
+                return null;
+            }
+            return Path.GetExtension(fileName);
+        }
     }
 }

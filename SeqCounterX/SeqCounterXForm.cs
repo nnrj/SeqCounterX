@@ -45,6 +45,83 @@ namespace SeqCounterX
             InitializeComponent();
         }
 
+        //private void runButton_Click(object sender, EventArgs e)
+        //{
+        //    string seqCounterPath = UtilX.ReplaceSeparatorChar(scqxSetting.seqCOunterCore);
+        //    if (UtilX.StrIsEmpty(seqCounterPath))
+        //    {
+        //        ShowNotice("请配置内核！", NoticeType.ERROR);
+        //        return;
+        //    }
+        //    if (!File.Exists(seqCounterPath))
+        //    {
+        //        ShowNotice("指定的内核不存在！", NoticeType.ERROR);
+        //        return;
+        //    }
+        //    string parameters = "";
+        //    //if (UtilX.GetExtensionNameX(seqCounterPath) == ".py")
+        //    //{
+        //    //    parameters = seqCounterPath;
+        //    //    seqCounterPath = "python ";
+        //    //}
+        //    if(UtilX.GetExtensionNameX(seqCounterPath) != ".exe")
+        //    {
+        //        ShowNotice("不支持的内核文件类型，请重配内核。", NoticeType.ERROR);
+        //        return;
+        //    }
+        //    //if (!UtilX.StrIsEmpty(setting.seqCounter.inputOptions.seqPath))
+        //    //{
+        //    //    parameters = "-i  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.inputOptions.seqPath);
+        //    //}
+        //    //else
+        //    //{
+        //    //    parameters = " -i  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.inputOptions.seqPath);
+        //    //}
+        //    //if (!UtilX.StrIsEmpty(setting.seqCounter.outputOptions.resultPath))
+        //    //{
+        //    //    if (UtilX.StrIsEmpty(parameters))
+        //    //    {
+        //    //        parameters = "-o  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.outputOptions.resultPath);
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        parameters += " -o  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.outputOptions.resultPath);
+        //    //    }
+        //    //}
+        //    //if (!UtilX.StrIsEmpty(setting.seqCounter.constraintOptions.seqTypeList))
+        //    //{
+        //    //    if (UtilX.StrIsEmpty(parameters))
+        //    //    {
+        //    //        parameters = "-c  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.constraintOptions.seqTypeList);
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        parameters += " -c  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.constraintOptions.seqTypeList);
+        //    //    }
+        //    //}
+        //    try
+        //    {
+        //        if (!UtilX.CheckFolderPath(setting.seqCounter.outputOptions.resultPath))
+        //        {
+        //            Directory.CreateDirectory(setting.seqCounter.outputOptions.resultPath);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        ShowNotice("指定的输出路径不存在，且自动创建失败！", NoticeType.ERROR);
+        //    }
+
+        //    if(monitorRichTextBox.Text == "")
+        //    {
+        //        monitorRichTextBox.AppendText("正在执行...\n");
+        //    }
+        //    else
+        //    {
+        //        monitorRichTextBox.AppendText("\n正在执行...\n");
+        //    }
+        //    ShowNotice("正在执行...");
+        //    ExecuteProgramSync(seqCounterPath, parameters);
+        //}
         private void runButton_Click(object sender, EventArgs e)
         {
             string seqCounterPath = UtilX.ReplaceSeparatorChar(scqxSetting.seqCOunterCore);
@@ -59,32 +136,11 @@ namespace SeqCounterX
                 return;
             }
             string parameters = "";
-            //if (!UtilX.StrIsEmpty(setting.seqCounter.inputOptions.seqPath))
-            //{
-            //    parameters = "-i  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.inputOptions.seqPath);
-            //}
-            //if (!UtilX.StrIsEmpty(setting.seqCounter.outputOptions.resultPath))
-            //{
-            //    if (UtilX.StrIsEmpty(parameters))
-            //    {
-            //        parameters = "-o  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.outputOptions.resultPath);
-            //    }
-            //    else
-            //    {
-            //        parameters += " -o  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.outputOptions.resultPath);
-            //    }
-            //}
-            //if (!UtilX.StrIsEmpty(setting.seqCounter.constraintOptions.seqTypeList))
-            //{
-            //    if (UtilX.StrIsEmpty(parameters))
-            //    {
-            //        parameters = "-c  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.constraintOptions.seqTypeList);
-            //    }
-            //    else
-            //    {
-            //        parameters += " -c  " + UtilX.ReplaceSeparatorChar(setting.seqCounter.constraintOptions.seqTypeList);
-            //    }
-            //}
+            if (UtilX.GetExtensionNameX(seqCounterPath) != ".exe")
+            {
+                ShowNotice("不支持的内核文件类型，请重配内核。", NoticeType.ERROR);
+                return;
+            }
             try
             {
                 if (!UtilX.CheckFolderPath(setting.seqCounter.outputOptions.resultPath))
@@ -96,8 +152,8 @@ namespace SeqCounterX
             {
                 ShowNotice("指定的输出路径不存在，且自动创建失败！", NoticeType.ERROR);
             }
-            
-            if(monitorRichTextBox.Text == "")
+
+            if (monitorRichTextBox.Text == "")
             {
                 monitorRichTextBox.AppendText("正在执行...\n");
             }
@@ -106,12 +162,14 @@ namespace SeqCounterX
                 monitorRichTextBox.AppendText("\n正在执行...\n");
             }
             ShowNotice("正在执行...");
-            ExecuteProgramSync(seqCounterPath, parameters);
+            // ExecuteProgramSync(seqCounterPath, parameters);
+            // ExecuteProgramByCMD(seqCounterPath, parameters);
+            ExecuteProgramAsync(seqCounterPath, parameters);
         }
 
         public void ExecuteProgramSync(string exePath, string parameters)
         {
-            if(!File.Exists(exePath) || parameters == null)
+            if(!UtilX.CheckFilePath(exePath))
             {
                 return;
             }
@@ -141,6 +199,34 @@ namespace SeqCounterX
             monitorRichTextBox.AppendText("\n执行完毕。\n");
             ShowNotice("执行完毕。");
         }
+
+        //private void ExceutePythonScript(string pyPath, string parameters)
+        //{
+        //    Process p = new Process();
+        //    string path = "reset_ipc.py";//待处理python文件的路径，本例中放在debug文件夹下
+        //    string sArguments = path;
+        //    ArrayList arrayList = new ArrayList();
+        //    arrayList.Add("com4");
+        //    arrayList.Add(57600);
+        //    arrayList.Add("password");
+        //    foreach (var param in arrayList)//添加参数
+        //    {
+        //        sArguments += " " + sigstr;
+        //    }
+
+        //    p.StartInfo.FileName = @"D:\Python2\python.exe"; //python2.7的安装路径
+        //    p.StartInfo.Arguments = sArguments;//python命令的参数
+        //    p.StartInfo.UseShellExecute = false;
+        //    p.StartInfo.RedirectStandardOutput = true;
+        //    p.StartInfo.RedirectStandardInput = true;
+        //    p.StartInfo.RedirectStandardError = true;
+        //    p.StartInfo.CreateNoWindow = true;
+        //    p.Start();//启动进程
+
+        //    Console.WriteLine("执行完毕！");
+
+        //    Console.ReadKey();
+        //}
 
         private void ExecuteProgramByCMD(string exePath, string parameters)
         {
@@ -192,6 +278,7 @@ namespace SeqCounterX
             process.BeginOutputReadLine();
             process.OutputDataReceived += new DataReceivedEventHandler(ProcessOutputDataReceived);
         }
+
 
         private void ProcessOutputDataReceived(object sender, DataReceivedEventArgs e)
         {
@@ -603,9 +690,10 @@ namespace SeqCounterX
                 ShowNotice("重置失败，备份文件为空。", NoticeType.ERROR);
                 return;
             }
+            SettingEntity settingBackEntity = null;
             try
             {
-                SettingEntity testSettingEntity = JsonConvert.DeserializeObject<SettingEntity>(settingJsonBack);
+                settingBackEntity = JsonConvert.DeserializeObject<SettingEntity>(settingJsonBack);
             }
             catch(Exception)
             {
@@ -613,6 +701,10 @@ namespace SeqCounterX
                 return;
             }
             string defaultSettingPath = "./ini/setting.json";
+            if(settingBackEntity != null)
+            {
+                setting = settingBackEntity;
+            }
             UtilX.SaveStrToFile(settingJsonBack, defaultSettingPath);
             scqxSetting.coreSetting = defaultSettingPath;
             ShowNotice("配置文件重置成功，重启本程序后生效。", NoticeType.WARNING);
