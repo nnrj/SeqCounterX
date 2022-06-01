@@ -1,5 +1,5 @@
 {
-  "version": "2.1.6",
-  "seqCOunterCore": "./seqCounter.exe",
-  "coreSetting": "./ini/setting.json"
+  "version": "1.0.2",
+	"seqCOunterCore":"./seqCounter.exe",
+	"coreSetting": "./ini/setting.json"
 }
