@@ -207,6 +207,23 @@ namespace SeqCounterX.Model
         }
         private bool _ignoreEmptySeq = true;
 
+        public bool similarityCompare
+        {
+            get
+            {
+                return _similarityCompare;
+            }
+            set
+            {
+                _similarityCompare = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("similarityCompare"));
+                }
+            }
+        }
+        private bool _similarityCompare = true;
+
         /// <summary>
         /// 属性改变后需要调用的方法，触发PropertyChanged事件。
         /// </summary>

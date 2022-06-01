@@ -43,6 +43,7 @@
             this.copeyToClipboardButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.similarityCompareCheckBox = new System.Windows.Forms.CheckBox();
             this.recoverSettingButton = new System.Windows.Forms.Button();
             this.coreVerisonLabel = new System.Windows.Forms.Label();
             this.ignoreEmptySeqCheckBox = new System.Windows.Forms.CheckBox();
@@ -214,6 +215,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.similarityCompareCheckBox);
             this.groupBox3.Controls.Add(this.recoverSettingButton);
             this.groupBox3.Controls.Add(this.coreVerisonLabel);
             this.groupBox3.Controls.Add(this.ignoreEmptySeqCheckBox);
@@ -267,9 +269,21 @@
             this.groupBox3.Text = "配置";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // similarityCompareCheckBox
+            // 
+            this.similarityCompareCheckBox.AutoSize = true;
+            this.similarityCompareCheckBox.Location = new System.Drawing.Point(191, 238);
+            this.similarityCompareCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.similarityCompareCheckBox.Name = "similarityCompareCheckBox";
+            this.similarityCompareCheckBox.Size = new System.Drawing.Size(106, 24);
+            this.similarityCompareCheckBox.TabIndex = 99;
+            this.similarityCompareCheckBox.Text = "相似度对比";
+            this.helpInfoToolTip.SetToolTip(this.similarityCompareCheckBox, "对比并标识同类序列时，跨越源文件比较，而非只在\r\n单个源文件内部对比。\r\n注意：若未开启[同类标识]，则本开关不起作用。");
+            this.similarityCompareCheckBox.UseVisualStyleBackColor = true;
+            // 
             // recoverSettingButton
             // 
-            this.recoverSettingButton.Location = new System.Drawing.Point(409, 489);
+            this.recoverSettingButton.Location = new System.Drawing.Point(409, 493);
             this.recoverSettingButton.Margin = new System.Windows.Forms.Padding(4);
             this.recoverSettingButton.Name = "recoverSettingButton";
             this.recoverSettingButton.Size = new System.Drawing.Size(96, 27);
@@ -292,7 +306,7 @@
             // ignoreEmptySeqCheckBox
             // 
             this.ignoreEmptySeqCheckBox.AutoSize = true;
-            this.ignoreEmptySeqCheckBox.Location = new System.Drawing.Point(409, 241);
+            this.ignoreEmptySeqCheckBox.Location = new System.Drawing.Point(414, 238);
             this.ignoreEmptySeqCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ignoreEmptySeqCheckBox.Name = "ignoreEmptySeqCheckBox";
             this.ignoreEmptySeqCheckBox.Size = new System.Drawing.Size(91, 24);
@@ -304,7 +318,7 @@
             // 
             // coreSettingChooseButton
             // 
-            this.coreSettingChooseButton.Location = new System.Drawing.Point(305, 489);
+            this.coreSettingChooseButton.Location = new System.Drawing.Point(305, 493);
             this.coreSettingChooseButton.Margin = new System.Windows.Forms.Padding(4);
             this.coreSettingChooseButton.Name = "coreSettingChooseButton";
             this.coreSettingChooseButton.Size = new System.Drawing.Size(96, 27);
@@ -337,12 +351,12 @@
             // 
             // seqTypeListTextBox
             // 
-            this.seqTypeListTextBox.Location = new System.Drawing.Point(305, 311);
+            this.seqTypeListTextBox.Location = new System.Drawing.Point(233, 302);
             this.seqTypeListTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.seqTypeListTextBox.Multiline = true;
             this.seqTypeListTextBox.Name = "seqTypeListTextBox";
             this.seqTypeListTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.seqTypeListTextBox.Size = new System.Drawing.Size(199, 137);
+            this.seqTypeListTextBox.Size = new System.Drawing.Size(271, 145);
             this.seqTypeListTextBox.TabIndex = 25;
             this.helpInfoToolTip.SetToolTip(this.seqTypeListTextBox, "维护用于类型识别序列类型信息。\r\n注意：该文件内容格式有严格规定，见帮助文档。\r\n合法约束格式如下：\r\n\t病毒名A-长度,\r\n\t病毒名B-长度1/长度2,\r\n\t病" +
         "毒名3-长度");
@@ -350,19 +364,19 @@
             // 
             // removeSymbolsTextBox
             // 
-            this.removeSymbolsTextBox.Location = new System.Drawing.Point(10, 311);
+            this.removeSymbolsTextBox.Location = new System.Drawing.Point(10, 302);
             this.removeSymbolsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.removeSymbolsTextBox.Multiline = true;
             this.removeSymbolsTextBox.Name = "removeSymbolsTextBox";
             this.removeSymbolsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.removeSymbolsTextBox.Size = new System.Drawing.Size(287, 137);
+            this.removeSymbolsTextBox.Size = new System.Drawing.Size(216, 146);
             this.removeSymbolsTextBox.TabIndex = 24;
             this.helpInfoToolTip.SetToolTip(this.removeSymbolsTextBox, "指定分析前，需要在输入文件中剔除的非序列字符。\r\n&nbsp：空格\r\n\\n：回车\r\n\\t：制表符\r\n@num：任何数字\r\n&emsp：不换行空格");
             // 
             // combineCompareCheckBox
             // 
             this.combineCompareCheckBox.AutoSize = true;
-            this.combineCompareCheckBox.Location = new System.Drawing.Point(310, 241);
+            this.combineCompareCheckBox.Location = new System.Drawing.Point(310, 238);
             this.combineCompareCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combineCompareCheckBox.Name = "combineCompareCheckBox";
             this.combineCompareCheckBox.Size = new System.Drawing.Size(91, 24);
@@ -417,7 +431,7 @@
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(305, 268);
+            this.label11.Location = new System.Drawing.Point(233, 255);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(112, 51);
@@ -452,7 +466,7 @@
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(10, 275);
+            this.label9.Location = new System.Drawing.Point(8, 271);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(117, 35);
@@ -463,10 +477,10 @@
             // 
             // symbolsTextBox
             // 
-            this.symbolsTextBox.Location = new System.Drawing.Point(86, 127);
+            this.symbolsTextBox.Location = new System.Drawing.Point(84, 131);
             this.symbolsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.symbolsTextBox.Name = "symbolsTextBox";
-            this.symbolsTextBox.Size = new System.Drawing.Size(418, 27);
+            this.symbolsTextBox.Size = new System.Drawing.Size(421, 27);
             this.symbolsTextBox.TabIndex = 12;
             this.helpInfoToolTip.SetToolTip(this.symbolsTextBox, "指定输入文件中可用于分割开多个序列的标志字符。\r\n格式：支持指定多个不同分隔符，用英文逗号隔开。");
             // 
@@ -484,7 +498,7 @@
             // singleExtractCheckBox
             // 
             this.singleExtractCheckBox.AutoSize = true;
-            this.singleExtractCheckBox.Location = new System.Drawing.Point(411, 208);
+            this.singleExtractCheckBox.Location = new System.Drawing.Point(414, 204);
             this.singleExtractCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.singleExtractCheckBox.Name = "singleExtractCheckBox";
             this.singleExtractCheckBox.Size = new System.Drawing.Size(91, 24);
@@ -497,7 +511,7 @@
             // compareCheckBox
             // 
             this.compareCheckBox.AutoSize = true;
-            this.compareCheckBox.Location = new System.Drawing.Point(409, 172);
+            this.compareCheckBox.Location = new System.Drawing.Point(414, 175);
             this.compareCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.compareCheckBox.Name = "compareCheckBox";
             this.compareCheckBox.Size = new System.Drawing.Size(91, 24);
@@ -510,7 +524,7 @@
             // extractSeqCheckBox
             // 
             this.extractSeqCheckBox.AutoSize = true;
-            this.extractSeqCheckBox.Location = new System.Drawing.Point(310, 208);
+            this.extractSeqCheckBox.Location = new System.Drawing.Point(310, 206);
             this.extractSeqCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.extractSeqCheckBox.Name = "extractSeqCheckBox";
             this.extractSeqCheckBox.Size = new System.Drawing.Size(91, 24);
@@ -523,7 +537,7 @@
             // seqTypeCheckBox
             // 
             this.seqTypeCheckBox.AutoSize = true;
-            this.seqTypeCheckBox.Location = new System.Drawing.Point(310, 171);
+            this.seqTypeCheckBox.Location = new System.Drawing.Point(310, 175);
             this.seqTypeCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.seqTypeCheckBox.Name = "seqTypeCheckBox";
             this.seqTypeCheckBox.Size = new System.Drawing.Size(91, 24);
@@ -539,7 +553,7 @@
             this.outputEncodingComboBox.Items.AddRange(new object[] {
             "utf-8",
             "gbk"});
-            this.outputEncodingComboBox.Location = new System.Drawing.Point(233, 204);
+            this.outputEncodingComboBox.Location = new System.Drawing.Point(233, 202);
             this.outputEncodingComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.outputEncodingComboBox.Name = "outputEncodingComboBox";
             this.outputEncodingComboBox.Size = new System.Drawing.Size(64, 28);
@@ -550,7 +564,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(157, 207);
+            this.label7.Location = new System.Drawing.Point(157, 205);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 20);
@@ -563,7 +577,7 @@
             this.inputEncodingComboBox.Items.AddRange(new object[] {
             "utf-8",
             "gbk"});
-            this.inputEncodingComboBox.Location = new System.Drawing.Point(233, 169);
+            this.inputEncodingComboBox.Location = new System.Drawing.Point(233, 166);
             this.inputEncodingComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inputEncodingComboBox.Name = "inputEncodingComboBox";
             this.inputEncodingComboBox.Size = new System.Drawing.Size(64, 28);
@@ -574,7 +588,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(157, 171);
+            this.label6.Location = new System.Drawing.Point(157, 169);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
@@ -588,7 +602,7 @@
             ".log",
             ".txt",
             ".xlsx"});
-            this.resultExtensionNameComboBox.Location = new System.Drawing.Point(86, 204);
+            this.resultExtensionNameComboBox.Location = new System.Drawing.Point(84, 202);
             this.resultExtensionNameComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.resultExtensionNameComboBox.Name = "resultExtensionNameComboBox";
             this.resultExtensionNameComboBox.Size = new System.Drawing.Size(64, 28);
@@ -599,7 +613,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 207);
+            this.label5.Location = new System.Drawing.Point(10, 204);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 20);
@@ -609,7 +623,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 171);
+            this.label4.Location = new System.Drawing.Point(10, 169);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 20);
@@ -622,7 +636,7 @@
             this.seqExtensionNameComboBox.Items.AddRange(new object[] {
             ".txt",
             ".fasta"});
-            this.seqExtensionNameComboBox.Location = new System.Drawing.Point(86, 168);
+            this.seqExtensionNameComboBox.Location = new System.Drawing.Point(84, 166);
             this.seqExtensionNameComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.seqExtensionNameComboBox.Name = "seqExtensionNameComboBox";
             this.seqExtensionNameComboBox.Size = new System.Drawing.Size(64, 28);
@@ -632,7 +646,7 @@
             // 
             // constrainFileChooseButton
             // 
-            this.constrainFileChooseButton.Location = new System.Drawing.Point(305, 98);
+            this.constrainFileChooseButton.Location = new System.Drawing.Point(305, 96);
             this.constrainFileChooseButton.Margin = new System.Windows.Forms.Padding(4);
             this.constrainFileChooseButton.Name = "constrainFileChooseButton";
             this.constrainFileChooseButton.Size = new System.Drawing.Size(96, 27);
@@ -644,7 +658,7 @@
             // 
             // outputFlolderOpenButton
             // 
-            this.outputFlolderOpenButton.Location = new System.Drawing.Point(409, 62);
+            this.outputFlolderOpenButton.Location = new System.Drawing.Point(409, 61);
             this.outputFlolderOpenButton.Margin = new System.Windows.Forms.Padding(4);
             this.outputFlolderOpenButton.Name = "outputFlolderOpenButton";
             this.outputFlolderOpenButton.Size = new System.Drawing.Size(96, 27);
@@ -656,7 +670,7 @@
             // 
             // inputFolderOpenButton
             // 
-            this.inputFolderOpenButton.Location = new System.Drawing.Point(409, 27);
+            this.inputFolderOpenButton.Location = new System.Drawing.Point(409, 26);
             this.inputFolderOpenButton.Margin = new System.Windows.Forms.Padding(4);
             this.inputFolderOpenButton.Name = "inputFolderOpenButton";
             this.inputFolderOpenButton.Size = new System.Drawing.Size(96, 27);
@@ -668,7 +682,7 @@
             // 
             // constrainFileEditButton
             // 
-            this.constrainFileEditButton.Location = new System.Drawing.Point(409, 98);
+            this.constrainFileEditButton.Location = new System.Drawing.Point(409, 95);
             this.constrainFileEditButton.Margin = new System.Windows.Forms.Padding(4);
             this.constrainFileEditButton.Name = "constrainFileEditButton";
             this.constrainFileEditButton.Size = new System.Drawing.Size(96, 27);
@@ -701,7 +715,7 @@
             // 
             // outputFlolderChooseButton
             // 
-            this.outputFlolderChooseButton.Location = new System.Drawing.Point(305, 62);
+            this.outputFlolderChooseButton.Location = new System.Drawing.Point(305, 61);
             this.outputFlolderChooseButton.Margin = new System.Windows.Forms.Padding(4);
             this.outputFlolderChooseButton.Name = "outputFlolderChooseButton";
             this.outputFlolderChooseButton.Size = new System.Drawing.Size(96, 27);
@@ -891,5 +905,6 @@
         private OpenFileDialog coreSettingChooseFileDialog;
         private RichTextBox monitorRichTextBox;
         private ToolTip helpInfoToolTip;
+        private CheckBox similarityCompareCheckBox;
     }
 }

@@ -1,5 +1,5 @@
 {
-  "version": "2.1.5",
+  "version": "2.1.6",
   "seqCounter": {
     "encoding": "utf-8",
     "inputOptions": {
@@ -27,7 +27,8 @@
         "@num",
         " "
       ],
-      "ignoreEmptySeq": true
+      "ignoreEmptySeq": true,
+      "similarityCompare": true
     },
     "constraintOptions": {
       "seqTypeList": "./ini/virusinfo.ini",

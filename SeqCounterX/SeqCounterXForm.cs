@@ -640,6 +640,7 @@ namespace SeqCounterX
             singleExtractCheckBox.DataBindings.Add("Checked", setting.seqCounter.outputOptions, "singleExtract");
             combineCompareCheckBox.DataBindings.Add("Checked", setting.seqCounter.outputOptions, "combineCompare");
             ignoreEmptySeqCheckBox.DataBindings.Add("Checked", setting.seqCounter.outputOptions, "ignoreEmptySeq");
+            similarityCompareCheckBox.DataBindings.Add("Checked", setting.seqCounter.outputOptions, "similarityCompare");
 
             coreVerisonLabel.Text = setting.version;
         }

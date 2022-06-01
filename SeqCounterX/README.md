@@ -2,11 +2,15 @@
 
 ## 关于
 
+SeqCounter is a DNA sequence analyzer.
+
 SeqCounter是一个DNA序列分析器。
 
 本项目以[GPL3.0](./LICENSE)协议开源，请务必遵守。
 
 GitHub仓库地址：https://github.com/nnrj/SeqCounter
+
+SeqCounterX是SeqCounter的GUI版本，仓库地址：https://github.com/nnrj/SeqCounterX
 
 ## 使用说明
 
@@ -81,7 +85,7 @@ GitHub仓库地址：https://github.com/nnrj/SeqCounter
 
 ```json
 {
-    "version": "2.1.5",
+    "version": "2.1.6",
     "seqCounter": {
         "encoding": "utf-8",
         "inputOptions": {
@@ -100,7 +104,8 @@ GitHub仓库地址：https://github.com/nnrj/SeqCounter
             "singleExtract": false,
             "extractExtensionName": ".fasta",
             "removeSymbols": [" ", "\n", "\t", "@num", " "],
-            "ignoreEmptySeq": true
+            "ignoreEmptySeq": true,
+            "similarityCompare": true
         },
         "constraintOptions": {
             "seqTypeList": "./ini/virusinfo.ini",
@@ -115,7 +120,7 @@ GitHub仓库地址：https://github.com/nnrj/SeqCounter
 
 ```java
 {
-    "version": "2.1.5", // 版本号
+    "version": "2.1.6", // 版本号
     "seqCounter": { // 序列统计模块配置
         "encoding": "utf-8", // 编码格式
         "inputOptions": { // 输入文件配置
@@ -134,7 +139,8 @@ GitHub仓库地址：https://github.com/nnrj/SeqCounter
             "singleExtract": false, // 是否单独提取（true，是；false：否）
             "extractExtensionName": ".fasta", // 提取序列的拓展名
             "removeSymbols": [" ", "\n", "\t", "@num", " "], // 提取序列时要移除的字符
-            "ignoreEmptySeq": true // 标识相同序列时，忽略空序列（true，是；false：否）
+            "ignoreEmptySeq": true, // 标识相同序列时，忽略空序列（true，是；false：否）
+            "similarityCompare": true // 是否统计序列相似度（true，是；false：否）
         },
         "constraintOptions": { // 约束文件配置
             "seqTypeList": "./ini/virusinfo.ini", // 序列类型列表文件
@@ -162,11 +168,16 @@ GitHub仓库地址：https://github.com/nnrj/SeqCounter
 
 ## 升级日志
 
+- 版本 2.1.6
+  - 支持序列相似度对比（以Excel表格形式输出）；
+
+  - 修复空序列提示信息未指出具体文件名的BUG。
+  
 - 版本 2.1.5
   - 标识相同序列时，允许跳过空序列；
 
   - 修复类型判断选项配置不起作用的BUG。
-  
+
 - 版本 2.1.3
   - 序列提取时，支持自定义要去除的字符或字符串。
 
@@ -202,4 +213,4 @@ GitHub仓库地址：https://github.com/nnrj/SeqCounter
 
 SeqCounter开发团队
 
-2022年5月28日
+2022年6月1日
